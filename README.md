@@ -80,13 +80,22 @@ Consta de 5 etapas las cuales se describen a continuación:
 
 ## Estructura del diseño del proyecto:
 
-1.- Login de acceso.
+1.- Iconos del sistema
+
+> ** NOTA: ** Estas imagenes corresponden al logo del sistema:
+
+![Login](imagenes/logo-login.svg)
+
+![Contenedor](imagenes/logo-nav.svg)
+
+2.- Login de acceso.
 
 Descripción:
 Permitir el acceso al sistema a traves del ingreso de RUT y contraseña.
 A continuación se muestran las imagenes que describen lo anterior.
 
-![Login](imagenes/logo.png)
+Estas imagenes corresponden a:
+
 ![Contenedor](imagenes/contenedor.png)
 
 Las credenciales de acceso son las siguientes:
@@ -97,23 +106,30 @@ Ambos campos son obligatorios.
 
 Si las credenciales de acceso son válidas, se accederá al home, inicio o menu principal de la aplicación.
 
-2.- Recuperar contraseña.
+3.- Recuperar contraseña.
 
-En caso de olvidar la contraseña, al hacer click en el link ¿Olvidaste tu contraseña? mostrar una alerta que indique se se le enviará una contraseña de restauracion a su correo electrónico.
+En caso de olvidar la contraseña, al hacer click en el link ¿Olvidaste tu contraseña? mostrar una alerta (modal-bootstrap) que indique se se le enviará una contraseña de restauracion a su correo electrónico.
 
-3.- Acceso al menu principal o home del sistema.
+![Contenedor](imagenes/Modal-contraseña.svg)
+
+4.- Acceso al menu principal o home del sistema.
 
 El home o menú principal tendrá en la sección superior, las siguientes pestañas de la interfaz gráfica:
 
 - Billetera.
-- Transferencias.
 - Mis Cuentas.
-- Pagos.
+- Historial.
 
 Al acceder al sistema, en la pestaña Billetera, se debe mostrar el saldo inicial. Para efectos del proyecto, lo definimos con un monto inicial de $50.000. Con este monto, se empiezan a realizar las diversas transacciones (Pagos).
+
+![Contenedor](imagenes/dashboard.svg)
 
 El(la) usuario(a) tiene asociado por lo menos dos productos bancarios (ej: Tarjetas de debito y crédito) y entre cuentas se realizan las diversas transacciones (Pagos).
 
 En la pestaña Mis cuentas, se visualiza los diversos productos bancarios que dispone el(la) usuario(a).
 
-En la pestaña Pagos, se realizan las transacciones relacionadas con un pago en dinero a una cuenta del usuario(a). Es decir, añadir al saldo disponible un monto de dinero mayor a 0. Se debe mostrar una alerta o mensaje de error si el monto a pagar excede al saldo disponible. y mostrar un mensaje de éxito en caso de que el saldo disponible es mayor o igual al monto a pagar.
+![Contenedor](imagenes/Mis%20cuentas.svg)
+
+En la pestaña Historial, se visualizará el historial de movimientos de las transacciones realizadas.
+
+![Contenedor](imagenes/Historial.svg)
