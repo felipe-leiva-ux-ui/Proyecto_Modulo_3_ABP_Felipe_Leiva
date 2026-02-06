@@ -1,0 +1,59 @@
+// ===============================
+// Grid personalizado
+// ===============================
+
+// Contenedor principal (aprovecha Bootstrap pero con tu propio wrapper)
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem; // espacio entre columnas
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px; // puedes ajustar según tu diseño
+}
+
+// Filas flexibles (para casos donde prefieras flexbox)
+.grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+// Columnas básicas (ejemplo de 12 columnas)
+@for $i from 1 through 12 {
+  .grid-col-#{$i} {
+    flex: 0 0 auto;
+    width: (100% / 12) * $i;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+// Responsive helpers
+@media (max-width: 768px) {
+  @for $i from 1 through 12 {
+    .grid-col-sm-#{$i} {
+      flex: 0 0 auto;
+      width: (100% / 12) * $i;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  @for $i from 1 through 12 {
+    .grid-col-md-#{$i} {
+      flex: 0 0 auto;
+      width: (100% / 12) * $i;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  @for $i from 1 through 12 {
+    .grid-col-lg-#{$i} {
+      flex: 0 0 auto;
+      width: (100% / 12) * $i;
+    }
+  }
+}

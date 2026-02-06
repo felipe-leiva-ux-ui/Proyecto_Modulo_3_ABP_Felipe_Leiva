@@ -1,0 +1,86 @@
+.dashboard {
+  background-color: #f1f1f1; // gris claro de fondo
+  min-height: 100vh;
+
+  // Caja genérica para cada sección
+  &__box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  // Saldo
+  &__saldo {
+    @extend .dashboard__box;
+
+    .saldo__monto {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $text-color;
+    }
+  }
+
+  // Gastos principales
+  &__gastos {
+    @extend .dashboard__box;
+    canvas {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  // Movimientos
+  &__movimientos {
+    @extend .dashboard__box;
+
+    table {
+      width: 100%;
+      th {
+        font-weight: 600;
+      }
+      td.text-danger {
+        color: #dc3545;
+        font-weight: 600;
+      }
+      td.text-success {
+        color: #28a745;
+        font-weight: 600;
+      }
+    }
+
+    .dashboard__ver-todos {
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+      color: $primary-color;
+      font-size: 0.9rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Tarjetas
+  &__tarjetas {
+    @extend .dashboard__box;
+
+    .tarjeta {
+      border-radius: 12px;
+      padding: 1rem;
+      font-family: 'Courier New', monospace;
+      color: #fff;
+      margin-bottom: 1rem;
+
+      &--debito {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+      }
+
+      &--credito {
+        background: linear-gradient(135deg, #28a745, #1e7e34);
+      }
+    }
+  }
+}

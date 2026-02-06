@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Wallet - Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  </head>
+  <body class="dashboard">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Logo + Marca -->
+             <img src="imagenes/logo-nav.svg" alt="">
+
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarEwallet" aria-controls="navbarEwallet" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse ml-4" id="navbarEwallet">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">Billetera</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Mis cuentas</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Historial</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+            <!-- Perfil -->
+            <div>
+                <a class="nav-link" href="#">
+                    <img src="imagenes/user-perfil.png" alt="Perfil" class="rounded-circle" style="width:32px; height:32px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="p-4">
+      <section class="grid-container">
+        <!-- Mi saldo actual -->
+        <article class="container dashboard__box">
+          <h2>Mi saldo actual</h2>
+          <p class="saldo__monto">$61.510 CLP</p>
+          <form class="saldo__form d-flex gap-2">
+            <input type="number" class="form-control" placeholder="Monto a abonar" />
+            <button type="submit" class="btn btn-success">Enviar</button>
+          </form>
+        </article>
+        <!-- Gastos principales -->
+        <article class="container dashboard__box ">
+          <h2>Gastos principales</h2>
+          <div id="chart1" class="chart"></div>
+        </article>
+        <!-- Últimos movimientos -->
+        <article class="container dashboard__box">
+          <div class="container row">
+            <h2 class="">Últimos movimientos</h2>
+            <a href="#" class="dashboard__ver-todos">Ver todos</a>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Movimiento</th>
+                <th>Cuenta</th>
+                <th>Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pago</td>
+                <td>Enel</td>
+                <td class="text-danger">-21.500</td>
+              </tr>
+              <tr>
+                <td>Pago</td>
+                <td>Movistar</td>
+                <td class="text-danger">-16.990</td>
+              </tr>
+              <tr>
+                <td>Depósito</td>
+                <td>Mi Billetera</td>
+                <td class="text-success">+100.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- Mis tarjetas -->
+      <section class="dashboard__tarjetas">
+        <div>
+          <h2>Mis tarjetas</h2>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" value="" id="checkNativeSwitch" switch>
+            <label class="form-check-label" for="checkNativeSwitch">
+              Native switch haptics
+            </label>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card tarjeta tarjeta--debito">
+              <div class="card-body">
+                <h5 class="card-title">Tarjeta de Débito</h5>
+                <p>Balance: $500.000</p>
+                <p>CARD HOLDER: Nombre Apellido</p>
+                <p>VALID THRU: 12/30</p>
+                <p>7894 5612 7486 1234</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card tarjeta tarjeta--credito">
+              <div class="card-body">
+                <h5 class="card-title">Tarjeta de Crédito</h5>
+                <p>Balance: $1.500.000</p>
+                <p>CARD HOLDER: Nombre Apellido</p>
+                <p>VALID THRU: 12/30</p>
+                <p>3778 8546 9517 8523</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+    <!-- Script para gráfico -->
+    <script src="charts.js"></script>
+    <!-- Apache echart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/6.0.0/echarts.min.js"></script>
+  </body>
+</html>
