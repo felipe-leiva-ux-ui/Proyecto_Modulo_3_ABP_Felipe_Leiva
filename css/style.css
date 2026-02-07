@@ -9591,4 +9591,29 @@ a.text-dark:hover, a.text-dark:focus {
   color: #333;
 }
 
+.dashboard__cuentas .card-body-plus {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.dashboard__cuentas .card-body-plus:hover {
+  background: #d0d0d0;
+}
+.dashboard__cuentas .card-body-plus i {
+  color: #888;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.dashboard__cuentas .card-body-plus:hover i {
+  color: #333;
+}
+.dashboard__cuentas .card-footer {
+  background-color: white;
+  border: none;
+}
+
 /*# sourceMappingURL=style.css.map */

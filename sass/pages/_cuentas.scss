@@ -1,0 +1,32 @@
+.dashboard__cuentas {
+
+    .card-body-plus {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;  
+        
+        &:hover {
+            background: #d0d0d0;
+        }
+
+        & i {
+            color: #888;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        &:hover i {
+            color: #333;
+        }   
+  }
+
+  .card-footer {
+    background-color: white;
+    border: none;
+  }
+
+}
