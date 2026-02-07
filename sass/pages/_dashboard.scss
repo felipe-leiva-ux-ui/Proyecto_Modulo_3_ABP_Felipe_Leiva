@@ -4,75 +4,63 @@
 
   // Caja genérica para cada sección
   &__box {
-    display: flex;
     background: #fff;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
   }
 
+
   // Saldo
   &__saldo {
     @extend .dashboard__box;
 
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
     .saldo__monto {
       font-size: 2rem;
       font-weight: 700;
-      color: $text-color;
-    }
-  }
-
-  // Gastos principales
-  &__gastos {
-    @extend .dashboard__box;
-    canvas {
-      max-width: 300px;
-      margin: 0 auto;
-    }
-  }
-
-  // Movimientos
-  &__movimientos {
-    @extend .dashboard__box;
-
-    table {
-      width: 100%;
-      th {
-        font-weight: 600;
-      }
-      td.text-danger {
-        color: #dc3545;
-        font-weight: 600;
-      }
-      td.text-success {
-        color: #28a745;
-        font-weight: 600;
-      }
+      color: #343a40; // puedes usar tu $text-color si lo tienes definido
+      margin-bottom: 1rem;
     }
 
-    .dashboard__ver-todos {
-      display: block;
-      text-align: right;
-      margin-top: 0.5rem;
-      color: $text-color;
-      font-size: 0.9rem;
-
-      &:hover {
-        text-decoration: underline;
+    .saldo__form {
+      label {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
       }
     }
-  }
 
   // Tarjetas
   &__tarjetas {
     @extend .dashboard__box;
 
+    .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .tarjeta .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .tarjeta {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
       border-radius: 12px;
       padding: 1rem;
       font-family: "lato", sans-serif;
       margin-bottom: 1rem;
+      height: 100%;
 
       &--debito {
         background: linear-gradient(135deg, #4c49ed, #0a06f4);
@@ -85,18 +73,23 @@
       }
 
       &--agregarTarjeta {
-        background-color: #DDDDDD;
-        color: $text-color;
         display: flex;
+        flex-direction: column;
+        background-color: #DDDDDD;
+        color: #888;
         align-items: center;
         justify-content: center;
         font-size: 1.5rem;
         cursor: pointer;
 
         &:hover {
-          background: #ced4da;
+          background: #d0d0d0;
         }
+        &:hover i {
+          color: #333;
+        } 
       }
     }
   }
+}
 }
